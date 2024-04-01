@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
 
-First, run the development server:
+<H1 align="center">Estrutura Next Search </H1>
+<p align="center">🚀Criação de uma estrutura de search em Next para referências futuras</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+## Criação de projeto Next
+
+```
+npx create-next-app@latest nextjs-search
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Adicionando pacotes 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+npm i @heroicons/react
+npm i clsx
+npm i use-debounce
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Alterando moduleResolution
 
-## Learn More
+Alteração da resolução de módulo para node em tsconfig.json
 
-To learn more about Next.js, take a look at the following resources:
+```
+...
+"moduleResolution": "node",
+...
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+# Diretório src\app
 
-## Deploy on Vercel
+## home
+  Diretório onde armazenará os componentes relacionados a está página e tem como caminho https://localhost:3000/home
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![image](https://github.com/lucasmargui/React_Estrutura_Search-Table/assets/157809964/915357f7-819a-4a2f-9e37-608d35071814)
+
+
+```
+import { useDebouncedCallback } from 'use-debounce';:
+```
+- Importa a função useDebouncedCallback de uma biblioteca chamada use-debounce. Essa função é usada para criar callbacks debounced (adiados) que só são executados após um certo tempo de inatividade.
+
+```
+export default function Search({ placeholder }: { placeholder: string }) {:
+```
+
+- Define um componente de função chamado Search, que aceita uma propriedade chamada placeholder como uma string.
+
+```
+const searchParams = useSearchParams();:
+```
+
+- Utiliza um hook chamado useSearchParams para obter os parâmetros de pesquisa da URL.
+
+```
+const pathname = usePathname();:
+```
+
+-  Utiliza um hook chamado usePathname para obter o caminho atual da URL.
+
+```
+const { replace } = useRouter();:
+```
+
+- Utiliza um hook chamado useRouter para obter uma função replace que pode ser usada para substituir a URL atual.
+
+```
+ const handleSearch = useDebouncedCallback((term) => { ... }, 300);:
+```
+
+- Cria um callback debounced chamado handleSearch que é acionado após 300 milissegundos de inatividade. Este callback é responsável por atualizar os parâmetros de pesquisa na URL e substituir a URL atual.
+
+
+
+
+
