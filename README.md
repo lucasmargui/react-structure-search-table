@@ -75,6 +75,28 @@ const { replace } = useRouter();:
 - Cria um callback debounced chamado handleSearch que é acionado após 300 milissegundos de inatividade. Este callback é responsável por atualizar os parâmetros de pesquisa na URL e substituir a URL atual.
 
 
+### Componente ui/home/Table.tsx
+
+![image](https://github.com/lucasmargui/React_Estrutura_Search-Table/assets/157809964/ccdeb3ac-c4e8-47de-a118-2b93371805f5)
+
+
+
+# Resultado 
+
+ <div align="center">
+   <h2>Default</h2>
+   <img src="https://github.com/lucasmargui/React_Estrutura_Search-Table/assets/157809964/cb78f54d-cb72-4d99-a01c-49b94403ef36" style="width:100%">
+   <h2>Realizando pesquisa</h2>
+   <img src="https://github.com/lucasmargui/React_Estrutura_Search-Table/assets/157809964/a20faa3a-1c67-431f-80a5-3c0516f998ef" style="width:100%">
+
+ </div>
+
+
+
+
+
+
+
 
 
 
