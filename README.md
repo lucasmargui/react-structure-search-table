@@ -1,16 +1,29 @@
+<H1 align="center">Next Search Structure </H1>
+<p align="center">🚀Creation of a search structure in Next for future references</p>
 
 
-<H1 align="center">Estrutura Next Search </H1>
-<p align="center">🚀Criação de uma estrutura de search em Next para referências futuras</p>
+## Requirements
+- Next
+- heroicons
+- clsx
+- use-debounce
 
 
-## Criação de projeto Next
+ <div align="center">
+ <h2>Default</h2>
+ <img src="https://github.com/lucasmargui/React_Estrutura_Search-Table/assets/157809964/cb78f54d-cb72-4d99-a01c-49b94403ef36" style="width:100%">
+ <h2>Searching</h2>
+ <img src="https://github.com/lucasmargui/React_Estrutura_Search-Table/assets/157809964/a20faa3a-1c67-431f-80a5-3c0516f998ef" style="width:100%">
+
+ </div>
+
+## Project creation Next
 
 ```
 npx create-next-app@latest nextjs-search
 ```
 
-### Adicionando pacotes 
+### Adding packages
 
 ```
 npm i @heroicons/react
@@ -18,9 +31,9 @@ npm i clsx
 npm i use-debounce
 ```
 
-### Alterando moduleResolution
+### Changing moduleResolution
 
-Alteração da resolução de módulo para node em tsconfig.json
+Changing module to node resolution in tsconfig.json
 
 ```
 ...
@@ -29,12 +42,12 @@ Alteração da resolução de módulo para node em tsconfig.json
 ```
 
 
-# Diretório src\app
+# src\app directory
 
 ## home
-  Diretório onde armazenará os componentes relacionados a está página e tem como caminho https://localhost:3000/home
+ Directory where the components related to this page will be stored and has the path https://localhost:3000/home
 
-  
+
 
 ![image](https://github.com/lucasmargui/React_Estrutura_Search-Table/assets/157809964/915357f7-819a-4a2f-9e37-608d35071814)
 
@@ -42,59 +55,42 @@ Alteração da resolução de módulo para node em tsconfig.json
 ```
 import { useDebouncedCallback } from 'use-debounce';:
 ```
-- Importa a função useDebouncedCallback de uma biblioteca chamada use-debounce. Essa função é usada para criar callbacks debounced (adiados) que só são executados após um certo tempo de inatividade.
+- Imports the useDebouncedCallback function from a library called use-debounce. This function is used to create debounced callbacks that only run after a certain amount of inactivity.
 
 ```
 export default function Search({ placeholder }: { placeholder: string }) {:
 ```
 
-- Define um componente de função chamado Search, que aceita uma propriedade chamada placeholder como uma string.
+- Defines a function component called Search, which accepts a property called placeholder as a string.
 
 ```
 const searchParams = useSearchParams();:
 ```
 
-- Utiliza um hook chamado useSearchParams para obter os parâmetros de pesquisa da URL.
+- Uses a hook called useSearchParams to obtain the URL search parameters.
 
 ```
 const pathname = usePathname();:
 ```
 
--  Utiliza um hook chamado usePathname para obter o caminho atual da URL.
+- Uses a hook called usePathname to obtain the current path of the URL.
 
 ```
 const { replace } = useRouter();:
 ```
 
-- Utiliza um hook chamado useRouter para obter uma função replace que pode ser usada para substituir a URL atual.
+- Uses a hook called useRouter to obtain a replace function that can be used to replace the current URL.
 
 ```
  const handleSearch = useDebouncedCallback((term) => { ... }, 300);:
 ```
 
-- Cria um callback debounced chamado handleSearch que é acionado após 300 milissegundos de inatividade. Este callback é responsável por atualizar os parâmetros de pesquisa na URL e substituir a URL atual.
+- Creates a debounced callback called handleSearch that fires after 300 milliseconds of inactivity. This callback is responsible for updating the search parameters in the URL and replacing the current URL.
 
 
-### Componente ui/home/Table.tsx
+### Component ui/home/Table.tsx
 
 ![image](https://github.com/lucasmargui/React_Estrutura_Search-Table/assets/157809964/ccdeb3ac-c4e8-47de-a118-2b93371805f5)
-
-
-
-# Resultado 
-
- <div align="center">
-   <h2>Default</h2>
-   <img src="https://github.com/lucasmargui/React_Estrutura_Search-Table/assets/157809964/cb78f54d-cb72-4d99-a01c-49b94403ef36" style="width:100%">
-   <h2>Realizando pesquisa</h2>
-   <img src="https://github.com/lucasmargui/React_Estrutura_Search-Table/assets/157809964/a20faa3a-1c67-431f-80a5-3c0516f998ef" style="width:100%">
-
- </div>
-
-
-
-
-
 
 
 
