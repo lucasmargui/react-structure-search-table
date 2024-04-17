@@ -1,4 +1,4 @@
-<H1 align="center">Next Search Structure </H1>
+<H1 align="center">Next Search</H1>
 <p align="center">🚀Creation of a search structure in Next for future references</p>
 
 
